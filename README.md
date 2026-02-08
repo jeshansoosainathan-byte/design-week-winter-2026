@@ -10,14 +10,11 @@ Each of the Viswall's monitors are identical. The Viswall is a 5x2 matrix of mon
 
 ( ! ) I will confirm these details as soon as I can confirm the dimensions. Left the resources on my work laptop, but doing this at home.
 
-- **Aspect Ratio**: (Awaiting confirmation)
+- **Aspect Ratio**:
   - 16 by 9
-  - 16 by 10
-- **Resolution**: (Awaiting confirmation)
-  - 3840x by 2160y
-  - 1920x by 1080y
-  - 3840x by 2400y
-  - 1920x by 1200y
+- **Resolution**:
+  - 4k @ 3840x by 2160y
+  - 2K @ 1920x by 1080y
 - **Physical Dimensions**: (roughly)
   - Each individual panel: 4x2 feet
   - Each logical panel (2x2): 8x4 feet.
