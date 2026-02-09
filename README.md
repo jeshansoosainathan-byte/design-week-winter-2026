@@ -1,6 +1,6 @@
 # W26 Design Week Template
 
-This project serves as a template for this design week challenge.
+This project serves as a template for this design week challenge
 
 ## 1. Multi-Display Rendering
 
