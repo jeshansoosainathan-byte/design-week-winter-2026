@@ -9,5 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Dual Monitor Scene.unity
     guid: bc7044024238fb841bd4db6b21830fdd
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 6b6799dd9ed57d64dbb80d59ad7529c5, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
