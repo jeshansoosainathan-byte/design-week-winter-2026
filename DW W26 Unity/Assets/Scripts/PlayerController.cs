@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     private float horizontal;
     private float up;
+
+    
     public void Move(InputAction.CallbackContext context)
     {
 
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
     public void jump(InputAction.CallbackContext context)
     {
 
-        if (context.started)
+        if (context.started && isGrounded())
         {
              
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpPower);
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     }
  
-
+   
 
 
     }
