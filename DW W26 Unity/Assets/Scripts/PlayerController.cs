@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
 
     private float horizontal;
-
+    private float up;
     public void Move(InputAction.CallbackContext context)
     {
 
@@ -30,26 +30,31 @@ public class PlayerController : MonoBehaviour
     public void jump(InputAction.CallbackContext context)
     {
 
-        if (context.performed )
+        if (context.started && isGrounded())
         {
+             
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpPower);
-
 
         }
 
 
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
 
         rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearVelocity.y);
 
-
+       
     }
 
+    private bool isGrounded()
+    {
 
+        return Physics2D.OverlapCapsule(groundCheck.position, new Vector2(1f, 0.1f), CapsuleDirection2D.Horizontal, 0, groundLayer);
 
+    }
+ 
 
 
 
