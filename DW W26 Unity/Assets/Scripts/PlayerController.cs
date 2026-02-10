@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public void jump(InputAction.CallbackContext context)
     {
 
-        if (context.started && isGrounded())
+        if (context.started)
         {
              
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpPower);
