@@ -15,7 +15,7 @@ public class DamagePlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("projectile"))
+        if (collision.gameObject.CompareTag("Projectile"))
         {
             TakeDamage(projectileDamage);
             Destroy(collision.gameObject); //Destroy the projectile on hit
