@@ -27,6 +27,19 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void jump(InputAction.CallbackContext context)
+    {
+
+        if (context.performed )
+        {
+            rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpPower);
+
+
+        }
+
+
+    }
+
     private void FixedUpdate()
     {
 
