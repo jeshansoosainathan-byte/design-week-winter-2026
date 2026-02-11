@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+/*To use this script just attach it to the root of the player prefab, then create a new empty transform as a child of the player prefab called Fire Point and position it at the tip of the weapon sprite
+ From there just assign prefabs for projectiles and drag the transforms for the player arm pivot and fire point into the appropriate spots*/
 public class FireProjectile : MonoBehaviour
 {
     [Header("Primary Projectile")]
