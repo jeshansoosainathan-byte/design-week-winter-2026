@@ -5,11 +5,14 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+    
+
     [Header("Player Component References")]
     [SerializeField] Rigidbody2D rigidbody2D;
     [SerializeField] private Image healthbarSprite;
- 
- 
+
+    public TeamSelectManager.Team CurrentTeam { get; private set; } = TeamSelectManager.Team.NONE;
+
 
     [Header("Player Stats")]
 
@@ -82,7 +85,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && coyoteTime >0)
         { 
 
-            hurt();
+            
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpHeight);
 
         }
@@ -151,6 +154,17 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
 
     }
 
+    public void SetTeam(TeamSelectManager.Team team)
+    {
+        CurrentTeam = team;
+
+        Debug.Log($"Player {GetComponent<PlayerInput>().playerIndex} joined {team}");
+        var sprite = GetComponent<SpriteRenderer>();
+        if (sprite != null)
+        {
+            sprite.color = team == TeamSelectManager.Team.PURGATORY ? Color.red : Color.blue;
+        }
+    }
     public void die()
     {
 
