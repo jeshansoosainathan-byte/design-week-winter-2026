@@ -80,10 +80,9 @@ public class PlayerController : MonoBehaviour
 
         jumpContext = context;
         if (context.performed && coyoteTime >0)
-        {
+        { 
 
             hurt();
-           
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpHeight);
 
         }
@@ -142,7 +141,7 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
     {
 
         currentHealth--;
-        AudioSource.PlayClipAtPoint(hurtSound, transform.position);
+        SFXManager.instance.playSFX(hurtSound, transform, 1f);
 
         if (currentHealth<=0)
         {
@@ -155,6 +154,8 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
     public void die()
     {
 
+        //Death sound   
+      
         Destroy(gameObject);
 
     }
