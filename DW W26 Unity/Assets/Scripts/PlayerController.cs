@@ -1,27 +1,62 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
     [Header("Player Component References")]
     [SerializeField] Rigidbody2D rigidbody2D;
-
-
-    [Header("Player Settings")]
+    [SerializeField] private Image healthbarSprite;
  
+ 
+
+    [Header("Player Stats")]
+
+
+    [SerializeField] float maxHealth;
+    [SerializeField] float currentHealth;
     [SerializeField] float speed;
-    [SerializeField] float jumpPower;
+    [SerializeField] float jumpHeight;
+    [SerializeField] float lowJumpMultiplier = 1.5f;
+    [SerializeField] float fallMultiplier = 2.5f;
+
 
     [Header("Grounding")]
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform groundCheck;
 
+    [SerializeField] float coyoteTime;
+    [SerializeField] float coyoteTimeMax = 0.2f;
+
+
+    
 
     private float horizontal;
     private float up;
 
-    
+    InputAction.CallbackContext jumpContext;
+
+
+    public void updateHealthBar()
+    {
+
+        healthbarSprite.fillAmount = currentHealth / maxHealth;
+
+    }
+
+
+    public void Start()
+    {
+
+        currentHealth = maxHealth;
+
+        updateHealthBar();
+
+
+
+    }
+
+
     public void Move(InputAction.CallbackContext context)
     {
 
@@ -32,11 +67,20 @@ public class PlayerController : MonoBehaviour
     public void jump(InputAction.CallbackContext context)
     {
 
-        if (context.started && isGrounded())
-        {
-             
-            rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpPower);
+         
 
+        jumpContext = context;
+        if (context.performed && coyoteTime >0)
+        {
+
+            currentHealth--;
+            rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpHeight);
+
+        }
+
+        if (context.canceled)
+        {
+            
         }
 
 
@@ -45,9 +89,36 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
-        rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearVelocity.y);
+        updateHealthBar();
+        if (isGrounded())
+        {
+            coyoteTime = coyoteTimeMax;
 
-       
+        }
+        else
+        {
+            coyoteTime -= Time.deltaTime;
+        }
+
+rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearVelocity.y);
+
+        if (rigidbody2D.linearVelocity.y < 0)    //If the player is falling
+        {
+            //Add to the velocity.
+            //Vector2.up (0, 1) * gravity (default is -9.8) * fallMultiplier scalar
+            //and then scaled by deltaTime to fix potential frame jitter
+            rigidbody2D.linearVelocity += (Vector2.up * Physics2D.gravity.y *
+                (fallMultiplier * Time.deltaTime));
+        }
+
+        else if (rigidbody2D.linearVelocity.y > 0 &&  !jumpContext.performed)
+        {
+            //If they are in the air and not pressing the key, apply the
+            //low jump multiplier.
+            rigidbody2D.linearVelocity += (Vector2.up * Physics2D.gravity.y *
+                (lowJumpMultiplier * Time.deltaTime));
+        }
+
     }
 
     private bool isGrounded()
