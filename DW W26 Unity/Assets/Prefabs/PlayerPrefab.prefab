@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 8569576040376426859}
   - component: {fileID: 361043437253885374}
   - component: {fileID: 9147167870991645883}
-  - component: {fileID: 4533255565610290519}
+  - component: {fileID: 5673612299309972587}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -591,7 +591,10 @@ MonoBehaviour:
   groundCheck: {fileID: 3474405626569798706}
   coyoteTime: 0
   coyoteTimeMax: 0.2
---- !u!82 &4533255565610290519
+  spawnSound: {fileID: 8300000, guid: ba1d829032f0c94449de448f0955c926, type: 3}
+  hurtSound: {fileID: 8300000, guid: 2a5641b0a7486c4428a3a8428889bbb0, type: 3}
+  source: {fileID: 0}
+--- !u!82 &5673612299309972587
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,7 +606,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ba1d829032f0c94449de448f0955c926, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
@@ -28,7 +29,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float coyoteTime;
     [SerializeField] float coyoteTimeMax = 0.2f;
 
-
+    [Header("Audio")]
+    [SerializeField] AudioClip spawnSound; // <-- drag your sound here in the inspector
+    [SerializeField] AudioClip hurtSound;
+    [SerializeField] AudioSource source;
     
 
     private float horizontal;
@@ -47,6 +51,11 @@ public class PlayerController : MonoBehaviour
 
     public void Start()
     {
+
+        source = GetComponent<AudioSource>();
+        source.clip= spawnSound; 
+        source.Play();
+
 
         currentHealth = maxHealth;
 
@@ -73,6 +82,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && coyoteTime >0)
         {
 
+            hurt();
            
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpHeight);
 
@@ -128,7 +138,25 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
 
     }
  
-   
+   public void hurt()
+    {
 
+        currentHealth--;
+        AudioSource.PlayClipAtPoint(hurtSound, transform.position);
+
+        if (currentHealth<=0)
+        {
+
+            die();
+        }
+
+    }
+
+    public void die()
+    {
+
+        Destroy(gameObject);
+
+    }
 
     }
