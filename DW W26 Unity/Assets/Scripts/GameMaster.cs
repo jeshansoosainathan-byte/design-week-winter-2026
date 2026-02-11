@@ -14,6 +14,8 @@ public class GameMaster : MonoBehaviour
     public void OnPlayerJoined(PlayerInput player)
     {
         Debug.Log($"Player {player.playerIndex} joined using {player.devices[0]}");
+     
+        
 
 
  

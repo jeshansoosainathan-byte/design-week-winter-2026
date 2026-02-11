@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Dual Monitor Scene.unity
     guid: bc7044024238fb841bd4db6b21830fdd
+  - enabled: 1
+    path: Assets/Scenes/FighterGame.unity
+    guid: 10c8b8c30ec856645ae089b3be8352ed
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 76a7b8025599b234fa32493b08fff261
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: 88cf52a61816e6749a457203a640a3d0
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 7ddf57ad09a449c42b895ded1d6c96fa
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6b6799dd9ed57d64dbb80d59ad7529c5, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

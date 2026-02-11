@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed && coyoteTime >0)
         {
 
-            currentHealth--;
+           
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocityX, jumpHeight);
 
         }
