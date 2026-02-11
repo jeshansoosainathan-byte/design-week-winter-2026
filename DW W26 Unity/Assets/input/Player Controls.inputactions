@@ -516,17 +516,6 @@
                 },
                 {
                     "name": "",
-                    "id": "dd778673-89a3-4400-8851-a7ae200dd729",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Join Cyberpunk",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "76adda68-1aca-4bf8-a4f0-51b379c731a8",
                     "path": "<Keyboard>/d",
                     "interactions": "",
