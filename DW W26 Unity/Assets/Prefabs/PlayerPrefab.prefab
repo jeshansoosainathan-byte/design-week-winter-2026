@@ -607,7 +607,7 @@ MonoBehaviour:
   fallMultiplier: 2.5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   groundCheck: {fileID: 3474405626569798706}
   coyoteTime: 0
   coyoteTimeMax: 0.2
