@@ -3,7 +3,7 @@ using UnityEngine;
 public class DestroyTerrain : MonoBehaviour
 {
     [Header("Hits Settings")]
-    [SerializeField] private int maxHits = 1; //S\How many hits a platform can survive 2 for stone, 1 for glass
+    [SerializeField] private int maxHits = 1; //How many hits a platform can survive 2 for stone, 1 for glass
 
     private int currentHits = 0;
 
@@ -30,7 +30,7 @@ public class DestroyTerrain : MonoBehaviour
         }
     }
 
-    private void TakeHit()
+    public void TakeHit()
     {
         currentHits++;
         if (currentHits >= maxHits)

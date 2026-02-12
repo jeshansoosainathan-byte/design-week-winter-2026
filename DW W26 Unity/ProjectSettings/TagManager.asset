@@ -4,14 +4,17 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - projectile
   - PlatformR
   - PlatformL
-  - projectile
+  - Projectile
+  - Glass
+  - Stone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
   - 
