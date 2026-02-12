@@ -684,6 +684,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 32909055-1dfe-472f-bb2d-9bcec35245dc
     m_ActionName: 'Player/Join Cyberpunk[/Keyboard/d,/XInputControllerWindows/buttonEast]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 82d4e1ff-eab6-42a8-9126-27153b2cdae2
+    m_ActionName: 'Player/CycleWeapons[/XInputControllerWindows/buttonSouth]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: XR
   m_DefaultActionMap: Player
@@ -711,7 +715,7 @@ MonoBehaviour:
   fallMultiplier: 2.5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   groundCheck: {fileID: 3474405626569798706}
   coyoteTime: 0
   coyoteTimeMax: 0.2

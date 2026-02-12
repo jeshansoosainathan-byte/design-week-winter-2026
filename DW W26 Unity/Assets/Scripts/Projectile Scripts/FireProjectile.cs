@@ -120,7 +120,7 @@ public class FireProjectile : MonoBehaviour
             rb.linearVelocity = firePoint.right * GetCurrentSpeed();
         }
 
-        Physics2D.IgnoreCollision()
+   
 
         Destroy(proj, 5f);
     }
