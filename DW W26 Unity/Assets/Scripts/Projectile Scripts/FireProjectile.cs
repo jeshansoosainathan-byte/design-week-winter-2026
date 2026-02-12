@@ -19,10 +19,14 @@ public class FireProjectile : MonoBehaviour
     [SerializeField] private Transform firePoint;
 
     [Header("Aiming")]
-    [SerializeField] private float aimDeadzone = 0.05f;
+  //  [SerializeField] private float aimDeadzone = 0.05f;
+
+    [Header("Owner")]
+    [SerializeField] GameObject owner;
+
 
     //Input & State
-    private PlayerControls controls;
+   
     private Vector2 aimDirection;
     private bool attackPressed;
     private float nextFireTime;
@@ -32,11 +36,7 @@ public class FireProjectile : MonoBehaviour
 
     private void Awake()
     {
-        controls = new PlayerControls();
-
-        controls.Player.Attack.performed += ctx => OnAttack(true);
-        controls.Player.Attack.canceled += ctx => OnAttack(false);
-        controls.Player.Interact.performed += ctx => SwapWeapon();
+        
     }
 
 
@@ -60,12 +60,12 @@ public class FireProjectile : MonoBehaviour
 
     private void OnEnable()
     {
-        controls.Player.Enable();
+      
     }
 
     private void OnDisable()
     {
-        controls.Player.Disable();
+       
     }
 
     private void Update()
@@ -114,13 +114,23 @@ public class FireProjectile : MonoBehaviour
         if (currentPrefab == null || firePoint == null) return;
 
         GameObject proj = Instantiate(currentPrefab, firePoint.position, firePoint.rotation);
+
+        BulletScript script = proj.GetComponent<BulletScript>();
+
+       ITeamMember teammember = owner.GetComponent<ITeamMember>();
+
+
+
+        script.Initialize(owner, teammember.getTeam());
+
         Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.linearVelocity = firePoint.right * GetCurrentSpeed();
         }
 
-   
+
+
 
         Destroy(proj, 5f);
     }

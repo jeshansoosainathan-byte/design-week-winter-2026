@@ -47,13 +47,13 @@ public class Grenade : MonoBehaviour
             //Damage Players
             if (hit.CompareTag("Player"))
             {
-                /*
-                DamagePlayer health = hit.GetComponent<DamagePlayer>();
-                if (health != null)
+                
+                IDamageable damageable = hit.GetComponent<IDamageable>();
+                if (damageable != null)
                 {
-                    health.TakeDamage(playerDamage);
+                    damageable.TakeDamage(playerDamage);
                 }
-                */
+                
             }
             //Damage Platforms (stone/glass/explosive)
             else if (hit.CompareTag("Stone") || hit.CompareTag("Glass"))

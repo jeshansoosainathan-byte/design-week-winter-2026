@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 149161760}
   - component: {fileID: 149161759}
   m_Layer: 0
-  m_Name: Purg_Background_0
+  m_Name: Purgatory Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4952,7 +4952,7 @@ GameObject:
   - component: {fileID: 991909369}
   - component: {fileID: 991909368}
   m_Layer: 0
-  m_Name: Purg_Background_0 (1)
+  m_Name: Cyberpunk Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7664,22 +7664,6 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: bd5d5c7a-0e4b-4e22-b3c1-929f879b431c
-        m_Path: <Keyboard>/a
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Join
-        m_Flags: 0
-      - m_Name: 
-        m_Id: 3c0f79e5-96c4-41ce-9aff-63966f5db764
-        m_Path: <Keyboard>/d
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Join
-        m_Flags: 0
-      - m_Name: 
         m_Id: cae37419-9d1a-40f3-a0cb-028e2410cd2d
         m_Path: <Gamepad>/buttonWest
         m_Interactions: 
@@ -9115,7 +9099,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1991826571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c3665d5881e194499fee8f2478ad14b, type: 3}
+  m_Script: {fileID: 11500000, guid: eff93d85cf9b36c44818c7006011fa8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   teamA: []

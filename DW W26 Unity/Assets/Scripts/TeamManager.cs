@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
  
-public class TeamSelectManager : MonoBehaviour
+public class TeamManager : MonoBehaviour
 {
     public enum Team
     {
@@ -12,7 +12,7 @@ public class TeamSelectManager : MonoBehaviour
         CYBERPUNK
     }
 
-    public static TeamSelectManager instance;
+    public static TeamManager instance;
 
 
     private void Awake()
@@ -26,28 +26,38 @@ public class TeamSelectManager : MonoBehaviour
 
     public void HandlePlayerJoined(PlayerInput playerInput)
     {
-
-
-
-
-
+        Debug.Log("Handle it!");
+        /*
         var joinAction = playerInput.actions["Join Purgatory"];
         var joinAction2 = playerInput.actions["Join Cyberpunk"];
-        if ( joinAction.IsPressed())
+
+        */
+
+
+        var gamepad = playerInput.devices[0] as Gamepad;
+
+        if ( gamepad.buttonWest.isPressed)
         {
+           
             AssignTeam(playerInput, Team.PURGATORY);
-            return;
+          
         }
-        else if (joinAction2.IsPressed())
+        else if (gamepad.buttonEast.isPressed)
+        {
+            //Debug.Log("Cyberpunk!");
+            AssignTeam(playerInput, Team.CYBERPUNK);
+        } else
         {
 
-            AssignTeam(playerInput, Team.CYBERPUNK);
+           
+
         }
 
     }
 
     void AssignTeam(PlayerInput player, Team team)
     {
+        
         if (team == Team.PURGATORY)
             teamA.Add(player);
         else if (team == Team.CYBERPUNK)

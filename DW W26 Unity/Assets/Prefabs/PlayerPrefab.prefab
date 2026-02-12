@@ -742,7 +742,7 @@ MonoBehaviour:
   secondaryFireRate: 0.5
   armPivot: {fileID: 184653666743076357}
   firePoint: {fileID: 7105763771840095704}
-  aimDeadzone: 0.05
+  owner: {fileID: 0}
 --- !u!82 &5673612299309972587
 AudioSource:
   m_ObjectHideFlags: 0
@@ -860,7 +860,7 @@ MonoBehaviour:
   secondaryFireRate: 3
   armPivot: {fileID: 3797501176420243022}
   firePoint: {fileID: 2074216949319604437}
-  aimDeadzone: 0.05
+  owner: {fileID: 5255609981148137612}
 --- !u!1 &6371749112819445351
 GameObject:
   m_ObjectHideFlags: 0

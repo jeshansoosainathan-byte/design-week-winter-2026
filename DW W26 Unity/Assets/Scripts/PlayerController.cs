@@ -2,17 +2,17 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-public class PlayerController : MonoBehaviour, IDamageable
+public class PlayerController : MonoBehaviour, IDamageable, ITeamMember
 {
 
     
 
     [Header("Player Component References")]
-    [SerializeField] Rigidbody2D rigidbody2D;
+    [SerializeField] private Rigidbody2D rigidbody2D;
     [SerializeField] private Image healthbarSprite;
     
 
-    public TeamSelectManager.Team CurrentTeam { get; private set; } = TeamSelectManager.Team.NONE;
+    public TeamManager.Team CurrentTeam { get; private set; } = TeamManager.Team.NONE;
 
 
     [Header("Player Stats")]
@@ -113,13 +113,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void Update()
     {
 
-         
-
-
-
-
-       
-
         updateHealthBar();
         if (isGrounded())
         {
@@ -160,24 +153,23 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
     }
  
   
-    public void SetTeam(TeamSelectManager.Team team)
+    public void SetTeam(TeamManager.Team team)
     {
         CurrentTeam = team;
 
+        
         Debug.Log($"Player {GetComponent<PlayerInput>().playerIndex} joined {team}");
 
-        if (team == TeamSelectManager.Team.PURGATORY)
+        if (team == TeamManager.Team.PURGATORY)
         {
 
-            transform.position = new Vector2(0, 0);
+           
 
 
         } else
         {
 
-            transform.position = new Vector2(30, 0);
-
-
+          
         }
 
 
@@ -185,7 +177,7 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
             var sprite = GetComponent<SpriteRenderer>();
         if (sprite != null)
         {
-            sprite.color = team == TeamSelectManager.Team.PURGATORY ? Color.red : Color.blue;
+            sprite.color = team == TeamManager.Team.PURGATORY ? Color.red : Color.blue;
         }
     }
     public void die()
@@ -207,5 +199,10 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
         }
 
 
+    }
+
+    public TeamManager.Team getTeam()
+    {
+        return CurrentTeam;
     }
 }

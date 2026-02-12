@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    /*
     int purgapoints = 0;
     int cyberpoints = 0;
+    */
 
 
     private void Awake()
@@ -23,9 +25,9 @@ public class GameManager : MonoBehaviour
     }
     public void OnPlayerJoined(PlayerInput player)
     {
-        Debug.Log($"Player {player.playerIndex} joined using {player.devices[0]}");
+     //   Debug.Log($"Player {player.playerIndex} joined using {player.devices[0]}");
 
-        TeamSelectManager.instance.HandlePlayerJoined(player);
+        TeamManager.instance.HandlePlayerJoined(player);
 
 
 
@@ -35,17 +37,6 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    public enum Team
-    {
-        Purgatory,
-        Cyberpunk
-    }
-    public class PlayerData
-    {
-        public Team team;
-        public int playerIndex;
-        public GameObject characterPrefab;
-    }
+  
 
-    public static List<PlayerData> players = new();
 }
