@@ -10,11 +10,12 @@ TagManager:
   - Projectile
   - Glass
   - Stone
+  - Grenade
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Tile
   - Water
   - UI
   - 

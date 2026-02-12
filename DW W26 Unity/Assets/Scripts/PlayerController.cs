@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Component References")]
     [SerializeField] Rigidbody2D rigidbody2D;
     [SerializeField] private Image healthbarSprite;
+    
 
     public TeamSelectManager.Team CurrentTeam { get; private set; } = TeamSelectManager.Team.NONE;
 
@@ -36,7 +37,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip spawnSound; // <-- drag your sound here in the inspector
     [SerializeField] AudioClip hurtSound;
     [SerializeField] AudioSource source;
-    
+
+
+
+
+
 
     private float horizontal;
     private float up;
@@ -51,6 +56,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
+ 
+
+    
 
     public void Start()
     {
@@ -80,7 +88,7 @@ public class PlayerController : MonoBehaviour
     {
 
 
-        Debug.Log("Jump!");
+     
 
         jumpContext = context;
         if (context.performed && coyoteTime >0)
@@ -99,11 +107,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+
+
     private void Update()
     {
 
+         
+       
 
-        Debug.Log($"Coyote Time: {coyoteTime}");
         updateHealthBar();
         if (isGrounded())
         {

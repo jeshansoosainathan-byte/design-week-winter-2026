@@ -28,6 +28,8 @@ public class FireProjectile : MonoBehaviour
     private float nextFireTime;
     private int currentWeaponIndex = 0; //0 = primary, 1 = secondary
 
+    private Vector2 lookInput;
+
     private void Awake()
     {
         controls = new PlayerControls();
@@ -36,6 +38,24 @@ public class FireProjectile : MonoBehaviour
         controls.Player.Attack.canceled += ctx => OnAttack(false);
         controls.Player.Interact.performed += ctx => SwapWeapon();
     }
+
+
+    public void fire(InputAction.CallbackContext context)
+    {
+
+        Debug.Log("Fire!");
+        attackPressed = context.performed;
+
+    }
+    public void look(InputAction.CallbackContext context)
+    {
+
+        lookInput=context.ReadValue<Vector2>();
+
+    }
+    
+
+
 
     private void OnEnable()
     {
@@ -49,24 +69,25 @@ public class FireProjectile : MonoBehaviour
 
     private void Update()
     {
+
+     
         //Read Look input every frame
-        Vector2 lookInput = controls.Player.Look.ReadValue<Vector2>();
+       
 
         //Persist/update aim direction if input exceeds deadzone
-        if (lookInput.sqrMagnitude > aimDeadzone)
-        {
-            aimDirection = lookInput.normalized;
-        }
+      
 
-        //Rotate arm to aim direction
-        if (aimDirection.sqrMagnitude > 0.01f)
-        {
-            float targetAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-            armPivot.rotation = Quaternion.Euler(0f, 0f, targetAngle);
-        }
+        /*
+    //Rotate arm to aim direction
+    if (aimDirection.sqrMagnitude > 0.01f)
+    {
+        float targetAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        armPivot.rotation = Quaternion.Euler(0f, 0f, targetAngle);
+    }
+    */
 
         //Fire on attack press
-        if (attackPressed && aimDirection.sqrMagnitude > 0.01f && Time.time >= nextFireTime)
+        if (attackPressed && Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + 1f / GetCurrentFireRate();
@@ -100,6 +121,9 @@ public class FireProjectile : MonoBehaviour
 
     private void Shoot()
     {
+
+        Debug.Log("Shoot!");
+        
         GameObject currentPrefab = GetCurrentPrefab();
         if (currentPrefab == null || firePoint == null) return;
 
