@@ -79,7 +79,8 @@ public class PlayerController : MonoBehaviour
     public void jump(InputAction.CallbackContext context)
     {
 
-         
+
+        Debug.Log("Jump!");
 
         jumpContext = context;
         if (context.performed && coyoteTime >0)
@@ -101,6 +102,8 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
 
+
+        Debug.Log($"Coyote Time: {coyoteTime}");
         updateHealthBar();
         if (isGrounded())
         {
