@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 925397546119656090}
   - component: {fileID: 8489391431220417973}
   m_Layer: 0
-  m_Name: Projectile Test 2
+  m_Name: PistolBullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.34509802, b: 0.52005506, a: 1}
+  m_Color: {r: 1, g: 0.72160673, b: 0.3443396, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,10 +101,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.01
+  m_Mass: 0.05
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0.75
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

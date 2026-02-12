@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
 
     
@@ -114,6 +114,10 @@ public class PlayerController : MonoBehaviour
     {
 
          
+
+
+
+
        
 
         updateHealthBar();
@@ -155,26 +159,30 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
 
     }
  
-   public void hurt()
-    {
-
-        currentHealth--;
-        SFXManager.instance.playSFX(hurtSound, transform, 1f);
-
-        if (currentHealth<=0)
-        {
-
-            die();
-        }
-
-    }
-
+  
     public void SetTeam(TeamSelectManager.Team team)
     {
         CurrentTeam = team;
 
         Debug.Log($"Player {GetComponent<PlayerInput>().playerIndex} joined {team}");
-        var sprite = GetComponent<SpriteRenderer>();
+
+        if (team == TeamSelectManager.Team.PURGATORY)
+        {
+
+            transform.position = new Vector2(0, 0);
+
+
+        } else
+        {
+
+            transform.position = new Vector2(30, 0);
+
+
+        }
+
+
+
+            var sprite = GetComponent<SpriteRenderer>();
         if (sprite != null)
         {
             sprite.color = team == TeamSelectManager.Team.PURGATORY ? Color.red : Color.blue;
@@ -189,4 +197,15 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
 
     }
 
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        SFXManager.instance.playSFX(hurtSound, transform, 1f);
+        if (currentHealth <= 0) {
+            currentHealth = 0;
+            die();
+        }
+
+
     }
+}

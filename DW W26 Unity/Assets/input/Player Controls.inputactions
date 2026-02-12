@@ -104,6 +104,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CycleWeapons",
+                    "type": "Button",
+                    "id": "82d4e1ff-eab6-42a8-9126-27153b2cdae2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -417,17 +426,6 @@
                 },
                 {
                     "name": "",
-                    "id": "daba33a1-ad0c-4742-a909-43ad1cdfbeb6",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "603f3daf-40bd-4854-8724-93e8017f59e3",
                     "path": "<XRController>/secondaryButton",
                     "interactions": "",
@@ -516,17 +514,6 @@
                 },
                 {
                     "name": "",
-                    "id": "08830ce6-c46e-4db3-9367-f3fbc3667c6e",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Join Purgatory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "65331a14-4f8d-4bdd-bc74-ac504fdb8d5c",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -538,23 +525,23 @@
                 },
                 {
                     "name": "",
-                    "id": "76adda68-1aca-4bf8-a4f0-51b379c731a8",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Join Cyberpunk",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d818eb2c-0737-4808-bfd9-51ece8673cc2",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Join Cyberpunk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8748c561-f464-4247-88e5-b613e1a3c1db",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleWeapons",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

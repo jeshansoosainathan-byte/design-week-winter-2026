@@ -43,7 +43,8 @@ public class FireProjectile : MonoBehaviour
     public void fire(InputAction.CallbackContext context)
     {
 
-        Debug.Log("Fire!");
+      
+
         attackPressed = context.performed;
 
     }
@@ -71,20 +72,6 @@ public class FireProjectile : MonoBehaviour
     {
 
      
-        //Read Look input every frame
-       
-
-        //Persist/update aim direction if input exceeds deadzone
-      
-
-        /*
-    //Rotate arm to aim direction
-    if (aimDirection.sqrMagnitude > 0.01f)
-    {
-        float targetAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        armPivot.rotation = Quaternion.Euler(0f, 0f, targetAngle);
-    }
-    */
 
         //Fire on attack press
         if (attackPressed && Time.time >= nextFireTime)
@@ -122,8 +109,7 @@ public class FireProjectile : MonoBehaviour
     private void Shoot()
     {
 
-        Debug.Log("Shoot!");
-        
+       
         GameObject currentPrefab = GetCurrentPrefab();
         if (currentPrefab == null || firePoint == null) return;
 
@@ -133,6 +119,8 @@ public class FireProjectile : MonoBehaviour
         {
             rb.linearVelocity = firePoint.right * GetCurrentSpeed();
         }
+
+        Physics2D.IgnoreCollision()
 
         Destroy(proj, 5f);
     }
