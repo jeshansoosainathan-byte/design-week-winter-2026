@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
 
     
@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Component References")]
     [SerializeField] Rigidbody2D rigidbody2D;
     [SerializeField] private Image healthbarSprite;
+    
 
     public TeamSelectManager.Team CurrentTeam { get; private set; } = TeamSelectManager.Team.NONE;
 
@@ -36,7 +37,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip spawnSound; // <-- drag your sound here in the inspector
     [SerializeField] AudioClip hurtSound;
     [SerializeField] AudioSource source;
-    
+
+
+
+
+
 
     private float horizontal;
     private float up;
@@ -51,6 +56,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
+ 
+
+    
 
     public void Start()
     {
@@ -79,7 +87,8 @@ public class PlayerController : MonoBehaviour
     public void jump(InputAction.CallbackContext context)
     {
 
-         
+
+     
 
         jumpContext = context;
         if (context.performed && coyoteTime >0)
@@ -98,8 +107,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+
+
     private void Update()
     {
+
+         
+
+
+
+
+       
 
         updateHealthBar();
         if (isGrounded())
@@ -140,26 +159,30 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
 
     }
  
-   public void hurt()
-    {
-
-        currentHealth--;
-        SFXManager.instance.playSFX(hurtSound, transform, 1f);
-
-        if (currentHealth<=0)
-        {
-
-            die();
-        }
-
-    }
-
+  
     public void SetTeam(TeamSelectManager.Team team)
     {
         CurrentTeam = team;
 
         Debug.Log($"Player {GetComponent<PlayerInput>().playerIndex} joined {team}");
-        var sprite = GetComponent<SpriteRenderer>();
+
+        if (team == TeamSelectManager.Team.PURGATORY)
+        {
+
+            transform.position = new Vector2(0, 0);
+
+
+        } else
+        {
+
+            transform.position = new Vector2(30, 0);
+
+
+        }
+
+
+
+            var sprite = GetComponent<SpriteRenderer>();
         if (sprite != null)
         {
             sprite.color = team == TeamSelectManager.Team.PURGATORY ? Color.red : Color.blue;
@@ -174,4 +197,15 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
 
     }
 
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        SFXManager.instance.playSFX(hurtSound, transform, 1f);
+        if (currentHealth <= 0) {
+            currentHealth = 0;
+            die();
+        }
+
+
     }
+}

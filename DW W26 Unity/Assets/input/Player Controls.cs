@@ -141,7 +141,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""f1ba0d36-48eb-4cd5-b651-1c94a6531f70"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -186,6 +186,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Join Cyberpunk"",
                     ""type"": ""Button"",
                     ""id"": ""32909055-1dfe-472f-bb2d-9bcec35245dc"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CycleWeapons"",
+                    ""type"": ""Button"",
+                    ""id"": ""82d4e1ff-eab6-42a8-9126-27153b2cdae2"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -426,6 +435,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a0e968f8-b9fb-4a7c-9eb9-8ed7f6fd4355"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""cbac6039-9c09-46a1-b5f2-4e5124ccb5ed"",
                     ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
@@ -492,22 +512,22 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""daba33a1-ad0c-4742-a909-43ad1cdfbeb6"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""id"": ""603f3daf-40bd-4854-8724-93e8017f59e3"",
+                    ""path"": ""<XRController>/secondaryButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": ""XR"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""603f3daf-40bd-4854-8724-93e8017f59e3"",
-                    ""path"": ""<XRController>/secondaryButton"",
+                    ""id"": ""0bf79676-5472-4a7b-b7a6-e52c0b26a869"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""XR"",
+                    ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -580,17 +600,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""08830ce6-c46e-4db3-9367-f3fbc3667c6e"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Join Purgatory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""65331a14-4f8d-4bdd-bc74-ac504fdb8d5c"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
@@ -602,23 +611,23 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""76adda68-1aca-4bf8-a4f0-51b379c731a8"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Join Cyberpunk"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d818eb2c-0737-4808-bfd9-51ece8673cc2"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Join Cyberpunk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8748c561-f464-4247-88e5-b613e1a3c1db"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CycleWeapons"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1217,6 +1226,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_JoinPurgatory = m_Player.FindAction("Join Purgatory", throwIfNotFound: true);
         m_Player_JoinCyberpunk = m_Player.FindAction("Join Cyberpunk", throwIfNotFound: true);
+        m_Player_CycleWeapons = m_Player.FindAction("CycleWeapons", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1321,6 +1331,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_JoinPurgatory;
     private readonly InputAction m_Player_JoinCyberpunk;
+    private readonly InputAction m_Player_CycleWeapons;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1376,6 +1387,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/JoinCyberpunk".
         /// </summary>
         public InputAction @JoinCyberpunk => m_Wrapper.m_Player_JoinCyberpunk;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/CycleWeapons".
+        /// </summary>
+        public InputAction @CycleWeapons => m_Wrapper.m_Player_CycleWeapons;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1435,6 +1450,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @JoinCyberpunk.started += instance.OnJoinCyberpunk;
             @JoinCyberpunk.performed += instance.OnJoinCyberpunk;
             @JoinCyberpunk.canceled += instance.OnJoinCyberpunk;
+            @CycleWeapons.started += instance.OnCycleWeapons;
+            @CycleWeapons.performed += instance.OnCycleWeapons;
+            @CycleWeapons.canceled += instance.OnCycleWeapons;
         }
 
         /// <summary>
@@ -1479,6 +1497,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @JoinCyberpunk.started -= instance.OnJoinCyberpunk;
             @JoinCyberpunk.performed -= instance.OnJoinCyberpunk;
             @JoinCyberpunk.canceled -= instance.OnJoinCyberpunk;
+            @CycleWeapons.started -= instance.OnCycleWeapons;
+            @CycleWeapons.performed -= instance.OnCycleWeapons;
+            @CycleWeapons.canceled -= instance.OnCycleWeapons;
         }
 
         /// <summary>
@@ -1856,6 +1877,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnJoinCyberpunk(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "CycleWeapons" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCycleWeapons(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
