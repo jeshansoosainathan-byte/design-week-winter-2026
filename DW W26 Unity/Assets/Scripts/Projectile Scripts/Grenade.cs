@@ -9,9 +9,14 @@ public class Grenade : MonoBehaviour
     [Header("Explosion")]
     [SerializeField] private float explosionRadius = 3f;
     [SerializeField] private float playerDamage = 50f;
-    [SerializeField] private int platformHits = 1; //Hits to deal to platforms
-    [SerializeField] private LayerMask explosionMask = -1; //Filter layers (Default = all)
+    [SerializeField] private int platformHits = 1; 
+    [SerializeField] private LayerMask explosionMask = -1; 
 
+    [Header("Effects")]
+    [SerializeField] private GameObject explosionVFX; //Explosion sprite placeholder
+
+    [Header("VFX Settings")]
+    [SerializeField] private float vfxLifetime = 0.5f; //How long effect lasts
 
     private void Start()
     {
@@ -27,6 +32,14 @@ public class Grenade : MonoBehaviour
 
     private void Explode()
     {
+        //Spawn explosion
+        if (explosionVFX != null)
+        {
+            GameObject vfx = Instantiate(explosionVFX, transform.position, Quaternion.identity);
+            vfx.transform.localScale = Vector3.one * (explosionRadius * 0.33f); 
+            Destroy(vfx, vfxLifetime);
+        }
+
         //AOE Damage
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius, explosionMask);
         foreach (Collider2D hit in hits)
@@ -40,7 +53,7 @@ public class Grenade : MonoBehaviour
                     health.TakeDamage(playerDamage);
                 }
             }
-            //Damage Platforms (stone/glass)
+            //Damage Platforms (stone/glass/explosive)
             else if (hit.CompareTag("Stone") || hit.CompareTag("Glass"))
             {
                 DestroyTerrain platform = hit.GetComponent<DestroyTerrain>();
