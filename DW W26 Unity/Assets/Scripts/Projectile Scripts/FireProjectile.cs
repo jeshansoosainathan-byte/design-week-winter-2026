@@ -21,7 +21,7 @@ public class FireProjectile : MonoBehaviour
     [Header("Aiming")]
     [SerializeField] private float aimDeadzone = 0.05f;
 
-    // Input & State
+    //Input & State
     private PlayerControls controls;
     private Vector2 aimDirection;
     private bool attackPressed;
