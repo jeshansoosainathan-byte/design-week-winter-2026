@@ -56,16 +56,13 @@ public class Grenade : MonoBehaviour
                 
             }
             //Damage Platforms (stone/glass/explosive)
-            else if (hit.CompareTag("Stone") || hit.CompareTag("Glass"))
+            else if  (hit.CompareTag("Tile"))
             {
-                DestroyTerrain platform = hit.GetComponent<DestroyTerrain>();
-                if (platform != null)
-                {
-                    for (int i = 0; i < platformHits; i++)
-                    {
-                        platform.TakeHit();
-                    }
-                }
+
+                IDamageable damageable = hit.GetComponent<IDamageable>();
+                damageable.TakeDamage(1);
+
+
             }
         }
 

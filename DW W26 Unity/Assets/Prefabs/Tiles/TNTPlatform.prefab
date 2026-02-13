@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3003467754691066908}
   - component: {fileID: 4928598711802317392}
   - component: {fileID: 4262866062500198140}
+  - component: {fileID: 8509731796237158175}
   m_Layer: 3
   m_Name: TNTPlatform
   m_TagString: Tile
@@ -178,3 +179,16 @@ MonoBehaviour:
   maxHealth: 1
   fullHealthSprite: {fileID: 21300000, guid: 4fffb883e7773bf4f95a43f6cfcf06d8, type: 3}
   lowHealthSprite: {fileID: 21300000, guid: 4fffb883e7773bf4f95a43f6cfcf06d8, type: 3}
+--- !u!114 &8509731796237158175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456427554309985320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fee77fe86019aa438e3cf2f21907e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenade: {fileID: 7802514685782721576, guid: 0148f343b22cd724983c1648a012bbd5, type: 3}

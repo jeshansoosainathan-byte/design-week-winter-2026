@@ -39,6 +39,12 @@ public class FireProjectile : MonoBehaviour
         
     }
 
+    public void cycleWeapons(InputAction.CallbackContext context)
+    {
+
+        SwapWeapon();
+
+    }
 
     public void fire(InputAction.CallbackContext context)
     {

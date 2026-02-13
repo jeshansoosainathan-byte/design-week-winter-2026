@@ -659,7 +659,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -681,11 +687,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: afd5eba1-7af1-4628-9c9b-d7718f3889fc
+  cloudProjectId: 6776f785-01a5-4b23-b00e-cffd8019e23a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: DW W26 Unity
-  organizationId: raphael-tetreault-as-publisher
+  organizationId: javisel
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

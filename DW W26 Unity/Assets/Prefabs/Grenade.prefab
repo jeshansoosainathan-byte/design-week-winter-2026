@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8489391431220417973}
   - component: {fileID: -8270343182280696076}
   m_Layer: 0
-  m_Name: Grenade Test
+  m_Name: Grenade
   m_TagString: Grenade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
