@@ -43,8 +43,6 @@ public class FireProjectile : MonoBehaviour
     public void fire(InputAction.CallbackContext context)
     {
 
-      
-
         attackPressed = context.performed;
 
     }

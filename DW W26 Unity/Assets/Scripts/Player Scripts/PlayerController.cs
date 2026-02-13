@@ -113,6 +113,14 @@ public class PlayerController : MonoBehaviour, IDamageable, ITeamMember
     private void Update()
     {
 
+
+        if (transform.position.y < -30)
+        {
+
+            TakeDamage(1f);
+
+        }
+
         updateHealthBar();
         if (isGrounded())
         {

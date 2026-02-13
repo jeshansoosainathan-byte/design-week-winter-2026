@@ -26,7 +26,7 @@ public class TeamManager : MonoBehaviour
 
     public void HandlePlayerJoined(PlayerInput playerInput)
     {
-        Debug.Log("Handle it!");
+     
         /*
         var joinAction = playerInput.actions["Join Purgatory"];
         var joinAction2 = playerInput.actions["Join Cyberpunk"];
@@ -66,6 +66,6 @@ public class TeamManager : MonoBehaviour
         var handler = player.GetComponent<PlayerController>();
         handler.SetTeam(team);
 
-        Debug.Log($"Player {player.playerIndex} joined {team}");
+        
     }
 }

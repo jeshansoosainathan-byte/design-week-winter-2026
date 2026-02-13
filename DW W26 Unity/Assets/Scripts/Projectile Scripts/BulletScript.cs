@@ -7,7 +7,7 @@ public class BulletScript : MonoBehaviour,ITeamMember
 {
 
     [SerializeField] float damageToPlayers;
-    [SerializeField] float damagetoTerrain;
+    [SerializeField] float damageToTerrain;
     public GameObject owner;
 
     public TeamManager.Team CurrentTeam = TeamManager.Team.NONE;
@@ -16,11 +16,11 @@ public class BulletScript : MonoBehaviour,ITeamMember
 
     public void Initialize(GameObject ownerIn, TeamManager.Team team)
     {
-        Debug.Log("Init!");
+       
         owner = ownerIn;
         CurrentTeam = team;
 
-        Debug.Log($"Owner: {owner} Team: {CurrentTeam}");
+
     }
 
     void Start()
@@ -40,11 +40,11 @@ public class BulletScript : MonoBehaviour,ITeamMember
         IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
 
         ITeamMember team = collision.gameObject.GetComponent<ITeamMember>();
-        GameObject obj = collision.gameObject;
 
-        Debug.Log($"Owner: {owner} Team: {CurrentTeam}");
+        GameObject obj = collision.gameObject;
+        
     
-            if (collision.gameObject == owner || team.getTeam() == CurrentTeam)
+            if (obj == owner || (team !=null && team.getTeam() == CurrentTeam))
             {
 
 
@@ -57,23 +57,25 @@ public class BulletScript : MonoBehaviour,ITeamMember
             }
         else
         {
+         
 
-            
             if (damageable != null)
             {
-                Debug.Log("Damageable!");
+            
                 if (collision.gameObject.CompareTag("Player"))
                 {
 
                     TeamManager.Team otherteam = team.getTeam();
 
-                    Debug.Log($"Player Detected, Shoot! I am {CurrentTeam} and it is {otherteam}");
+               
 
                     damageable.TakeDamage(damageToPlayers);
                 }
+
+
                 else if (collision.collider.CompareTag("Tile"))
                 {
-                    damageable.TakeDamage(damagetoTerrain);
+                    damageable.TakeDamage(damageToTerrain);
 
 
 
