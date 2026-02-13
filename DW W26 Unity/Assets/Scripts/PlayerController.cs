@@ -191,7 +191,12 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
     }
     public void die()
     {
+        //Determine winner
+        GameManager.Team winnerTeam = (CurrentTeam == TeamSelectManager.Team.PURGATORY)
+        ? GameManager.Team.Cyberpunk
+        : GameManager.Team.Purgatory;
 
+        GameManager.winner = winnerTeam;
         //Death sound   
         SceneManager.LoadScene("Victory");
     }
