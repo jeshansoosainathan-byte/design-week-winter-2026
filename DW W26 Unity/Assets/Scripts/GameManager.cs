@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     int purgapoints = 0;
     int cyberpoints = 0;
 
+    public static Team winner = Team.None;
 
     private void Awake()
     {
@@ -38,7 +39,8 @@ public class GameManager : MonoBehaviour
     public enum Team
     {
         Purgatory,
-        Cyberpunk
+        Cyberpunk,
+        None
     }
     public class PlayerData
     {
