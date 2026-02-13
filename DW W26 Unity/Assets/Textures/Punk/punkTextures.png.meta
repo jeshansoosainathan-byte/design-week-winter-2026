@@ -1,0 +1,315 @@
+fileFormatVersion: 2
+guid: e60bc679147235d43aa4da7658e45b51
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2330816468849722924
+    second: punkTextures_0
+  - first:
+      213: 1887227686117541831
+    second: punkTextures_1
+  - first:
+      213: -3862049567145389928
+    second: punkTextures_2
+  - first:
+      213: -1375604707723200989
+    second: punkTextures_3
+  - first:
+      213: -4906578468047699773
+    second: punkTextures_4
+  - first:
+      213: -4709897868886247573
+    second: punkTextures_5
+  - first:
+      213: 1077162709886479412
+    second: punkTextures_6
+  - first:
+      213: -6121389760563970826
+    second: punkTextures_7
+  - first:
+      213: -3707176444429009718
+    second: punkTextures_8
+  - first:
+      213: -7461221663448055339
+    second: punkTextures_9
+  - first:
+      213: -8139582335890443814
+    second: punkTextures_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: punkTextures_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 597
+        width: 671
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9f49155c647afd0800000000000000
+      internalID: -2330816468849722924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punkTextures_1
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 597
+        width: 671
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c78151e497c03a10800000000000000
+      internalID: 1887227686117541831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punkTextures_2
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 597
+        width: 670
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8901955716e376ac0800000000000000
+      internalID: -3862049567145389928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punkTextures_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 338
+        width: 667
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fcfeddf1747c0ba0800000000000000
+      internalID: -6121389760563970826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punkTextures_8
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 337
+        width: 671
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: accfc1e4aa67d8cc0800000000000000
+      internalID: -3707176444429009718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punkTextures_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 37
+        width: 666
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d1cab7ad6a647890800000000000000
+      internalID: -7461221663448055339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punkTextures_10
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 37
+        width: 666
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad1b439adf46a0f80800000000000000
+      internalID: -8139582335890443814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 946add0c2214eac4fb4c4729e152dde8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      punkTextures_0: -2330816468849722924
+      punkTextures_1: 1887227686117541831
+      punkTextures_10: -8139582335890443814
+      punkTextures_2: -3862049567145389928
+      punkTextures_3: -1375604707723200989
+      punkTextures_4: -4906578468047699773
+      punkTextures_5: -4709897868886247573
+      punkTextures_6: 1077162709886479412
+      punkTextures_7: -6121389760563970826
+      punkTextures_8: -3707176444429009718
+      punkTextures_9: -7461221663448055339
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

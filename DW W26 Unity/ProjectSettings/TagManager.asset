@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - PlatformR
-  - PlatformL
+  - Kill
+  - Radius
   layers:
   - Default
   - TransparentFX
@@ -14,10 +14,10 @@ TagManager:
   - Water
   - UI
   - Barrier
-  - Platform
-  - 
-  - 
-  - 
+  - PlatformL
+  - PlatformR
+  - PlayerL
+  - PlayerR
   - 
   - 
   - 
