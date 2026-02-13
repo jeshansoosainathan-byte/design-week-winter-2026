@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour, IDamageable, ITeamMember
     [SerializeField] AudioClip hurtSound;
     [SerializeField] AudioSource source;
 
-
-
+    [SerializeField] Sprite purgatorySprite;
+    [SerializeField] Sprite cyberpunkSprite;
 
 
 
@@ -167,26 +167,24 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
 
         
         Debug.Log($"Player {GetComponent<PlayerInput>().playerIndex} joined {team}");
-
+        var sprite = GetComponent<SpriteRenderer>();
         if (team == TeamManager.Team.PURGATORY)
         {
 
-           
+            sprite.sprite = purgatorySprite;
 
 
         } else
         {
 
+            sprite.sprite = cyberpunkSprite;
+        }
+
+        sprite.color = Color.blue;
+
+
           
-        }
-
-
-
-            var sprite = GetComponent<SpriteRenderer>();
-        if (sprite != null)
-        {
-            sprite.color = team == TeamManager.Team.PURGATORY ? Color.red : Color.blue;
-        }
+        
     }
     public void die()
     {

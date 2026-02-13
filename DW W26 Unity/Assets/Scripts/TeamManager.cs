@@ -11,13 +11,20 @@ public class TeamManager : MonoBehaviour
         PURGATORY,
         CYBERPUNK
     }
-
+  
     public static TeamManager instance;
 
 
     private void Awake()
     {
-        if (instance == null) { instance = this; }
+        if (instance == null) { instance = this; DontDestroyOnLoad(gameObject); } else
+        {
+         
+        }
+
+        
+
+
     }
 
 
@@ -38,13 +45,21 @@ public class TeamManager : MonoBehaviour
 
         if ( gamepad.buttonWest.isPressed)
         {
-           
+
+            Debug.Log("Join purg");
             AssignTeam(playerInput, Team.PURGATORY);
+
+            Destroy(gameObject);
+
+
+
+
           
         }
         else if (gamepad.buttonEast.isPressed)
         {
-            //Debug.Log("Cyberpunk!");
+
+            Debug.Log("Join cyber");
             AssignTeam(playerInput, Team.CYBERPUNK);
         } else
         {
@@ -57,9 +72,10 @@ public class TeamManager : MonoBehaviour
 
     void AssignTeam(PlayerInput player, Team team)
     {
-        
+      
         if (team == Team.PURGATORY)
             teamA.Add(player);
+
         else if (team == Team.CYBERPUNK)
             teamB.Add(player);
 
@@ -68,4 +84,11 @@ public class TeamManager : MonoBehaviour
 
         
     }
+
+    public void StartGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("FighterScene");
+    }
+
+
 }
