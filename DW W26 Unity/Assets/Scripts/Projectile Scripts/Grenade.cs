@@ -8,7 +8,7 @@ public class Grenade : MonoBehaviour
 
     [Header("Explosion")]
     [SerializeField] private float explosionRadius = 3f;
-    [SerializeField] private float playerDamage = 50f;
+    [SerializeField] private float playerDamage = 2f;
     [SerializeField] private int platformHits = 1; 
     [SerializeField] private LayerMask explosionMask = -1; 
 
@@ -48,8 +48,13 @@ public class Grenade : MonoBehaviour
             if (hit.CompareTag("Player"))
             {
                 
+<<<<<<< HEAD
                 IDamageable damageable = hit.GetComponent<IDamageable>();
                 if (damageable != null)
+=======
+                PlayerController health = hit.GetComponent<PlayerController>();
+                if (health != null)
+>>>>>>> 49e718f01333344692324fea0b8160d0faaf6e19
                 {
                     damageable.TakeDamage(playerDamage);
                 }

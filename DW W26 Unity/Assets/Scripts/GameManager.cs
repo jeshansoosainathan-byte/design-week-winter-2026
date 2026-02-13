@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     int cyberpoints = 0;
     */
 
+    public static Team winner = Team.None;
 
     private void Awake()
     {
@@ -37,6 +38,21 @@ public class GameManager : MonoBehaviour
     {
         
     }
+<<<<<<< HEAD
   
+=======
+    public enum Team
+    {
+        Purgatory,
+        Cyberpunk,
+        None
+    }
+    public class PlayerData
+    {
+        public Team team;
+        public int playerIndex;
+        public GameObject characterPrefab;
+    }
+>>>>>>> 49e718f01333344692324fea0b8160d0faaf6e19
 
 }

@@ -104,6 +104,27 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+<<<<<<< HEAD
+=======
+                },
+                {
+                    "name": "CycleWeapons",
+                    "type": "Button",
+                    "id": "82d4e1ff-eab6-42a8-9126-27153b2cdae2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Respawn",
+                    "type": "Button",
+                    "id": "291d3d8d-2a3b-4d83-a9e3-81ffd3ae9bf0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+>>>>>>> 49e718f01333344692324fea0b8160d0faaf6e19
                 }
             ],
             "bindings": [
@@ -502,6 +523,31 @@
                     "action": "Join Cyberpunk",
                     "isComposite": false,
                     "isPartOfComposite": false
+<<<<<<< HEAD
+=======
+                },
+                {
+                    "name": "",
+                    "id": "8748c561-f464-4247-88e5-b613e1a3c1db",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CycleWeapons",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dcebe6d3-f543-4d6b-bb39-8a076b568816",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+>>>>>>> 49e718f01333344692324fea0b8160d0faaf6e19
                 }
             ]
         },

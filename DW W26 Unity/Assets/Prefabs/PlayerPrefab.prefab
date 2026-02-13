@@ -219,37 +219,6 @@ Transform:
   - {fileID: 3797501176420243022}
   m_Father: {fileID: 4856522499816170869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2225001304268554290
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7105763771840095704}
-  m_Layer: 0
-  m_Name: Fire Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7105763771840095704
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2225001304268554290}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3797501176420243022}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4742900755593003071
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +252,6 @@ Transform:
   m_Children:
   - {fileID: 2074216949319604437}
   - {fileID: 646718229117825513}
-  - {fileID: 7105763771840095704}
   m_Father: {fileID: 184653666743076357}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9111462041039933946
@@ -348,7 +316,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4742900755593003071}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75674fbe027135d4d8314fb55cb97cf0, type: 3}
   m_Name: 
@@ -586,7 +554,11 @@ MonoBehaviour:
     m_ActionName: 'Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta,/Pen/delta]'
   - m_PersistentCalls:
       m_Calls:
+<<<<<<< HEAD
       - m_Target: {fileID: 1530171198536963269}
+=======
+      - m_Target: {fileID: 0}
+>>>>>>> 49e718f01333344692324fea0b8160d0faaf6e19
         m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
         m_MethodName: fire
         m_Mode: 0
@@ -749,8 +721,13 @@ MonoBehaviour:
   secondarySpeed: 15
   secondaryFireRate: 0.5
   armPivot: {fileID: 184653666743076357}
+<<<<<<< HEAD
   firePoint: {fileID: 7105763771840095704}
   owner: {fileID: 5255609981148137612}
+=======
+  firePoint: {fileID: 2074216949319604437}
+  aimDeadzone: 0.05
+>>>>>>> 49e718f01333344692324fea0b8160d0faaf6e19
 --- !u!82 &5673612299309972587
 AudioSource:
   m_ObjectHideFlags: 0
