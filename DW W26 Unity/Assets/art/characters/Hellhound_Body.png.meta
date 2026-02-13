@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 8edc1f8e23409f0408310e5fc22c0be1
+guid: 299c8be00e49011449c742d4ec44f8f2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3568250714231132437
-    second: Hellhound_Walk_Spritesheet_0
-  - first:
-      213: -1840595186853393462
-    second: Hellhound_Walk_Spritesheet_1
-  - first:
-      213: 7546203383319455661
-    second: Hellhound_Walk_Spritesheet_2
-  - first:
-      213: -4888336746471972779
-    second: Hellhound_Walk_Spritesheet_3
+      213: -5799911854327938152
+    second: Hellhound_Body_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hellhound_Walk_Spritesheet_0
+      name: Hellhound_Body_0
       rect:
         serializedVersion: 2
         x: 243
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bee28bc71e60b7ec0800000000000000
-      internalID: -3568250714231132437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hellhound_Walk_Spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 1151
-        y: 0
-        width: 704
-        height: 984
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: acb4f40fd64e476e0800000000000000
-      internalID: -1840595186853393462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hellhound_Walk_Spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 2291
-        y: 0
-        width: 588
-        height: 984
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da76b91eeff79b860800000000000000
-      internalID: 7546203383319455661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hellhound_Walk_Spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 3275
-        y: 22
-        width: 628
-        height: 962
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 550ac0ce0a3292cb0800000000000000
-      internalID: -4888336746471972779
+      spriteID: 893c432d5e2928fa0800000000000000
+      internalID: -5799911854327938152
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hellhound_Walk_Spritesheet_0: -3568250714231132437
-      Hellhound_Walk_Spritesheet_1: -1840595186853393462
-      Hellhound_Walk_Spritesheet_2: 7546203383319455661
-      Hellhound_Walk_Spritesheet_3: -4888336746471972779
+      Hellhound_Body_0: -5799911854327938152
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
