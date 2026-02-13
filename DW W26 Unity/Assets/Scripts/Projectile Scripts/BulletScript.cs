@@ -11,14 +11,16 @@ public class BulletScript : MonoBehaviour,ITeamMember
     public GameObject owner;
 
     public TeamManager.Team CurrentTeam = TeamManager.Team.NONE;
-    
+    bool unique = false;
 
 
-    public void Initialize(GameObject ownerIn, TeamManager.Team team)
+
+    public void Initialize(GameObject ownerIn, TeamManager.Team team, bool uniqueIn)
     {
        
         owner = ownerIn;
         CurrentTeam = team;
+        unique = uniqueIn;
 
 
     }
@@ -36,7 +38,7 @@ public class BulletScript : MonoBehaviour,ITeamMember
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if (unique) { return; }
         IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
 
         ITeamMember team = collision.gameObject.GetComponent<ITeamMember>();
@@ -94,6 +96,7 @@ public class BulletScript : MonoBehaviour,ITeamMember
         }
 
         Destroy(gameObject);
+        
     }
 
 

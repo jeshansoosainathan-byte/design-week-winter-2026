@@ -166,4 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToPlayers: 2.5
-  damagetoTerrain: 1
+  damageToTerrain: 1
+  owner: {fileID: 0}
+  CurrentTeam: 0

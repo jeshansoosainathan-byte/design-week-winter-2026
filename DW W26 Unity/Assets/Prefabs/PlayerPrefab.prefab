@@ -696,6 +696,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 32909055-1dfe-472f-bb2d-9bcec35245dc
     m_ActionName: 'Player/Join Cyberpunk[/Keyboard/d,/XInputControllerWindows/buttonEast]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1530171198536963269}
+        m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+        m_MethodName: cycleLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f944896-17a8-4757-816b-7bbae348c61a
+    m_ActionName: 'Player/Previous Weapon[/XInputControllerWindows/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1530171198536963269}
+        m_TargetAssemblyTypeName: FireProjectile, Assembly-CSharp
+        m_MethodName: cycleRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fe511515-e0bc-4373-8f23-90f2affcdf9b
+    m_ActionName: 'Player/Next Weapon[/XInputControllerWindows/rightShoulder]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: XR
   m_DefaultActionMap: Player
@@ -745,12 +777,19 @@ MonoBehaviour:
   primaryPrefab: {fileID: 7802514685782721576, guid: ebe68515e3743c343a6d52f2c430d924, type: 3}
   primarySpeed: 20
   primaryFireRate: 5
-  secondaryPrefab: {fileID: 7802514685782721576, guid: 0148f343b22cd724983c1648a012bbd5, type: 3}
+  secondaryPrefab: {fileID: 7802514685782721576, guid: 5491e6d90a4d58149888da9370b076fd, type: 3}
   secondarySpeed: 15
   secondaryFireRate: 0.5
+  tertiaryPrefab: {fileID: 7802514685782721576, guid: 0148f343b22cd724983c1648a012bbd5, type: 3}
+  tertiarySpeed: 60
+  tertiaryFireRate: 1
+  weapons: []
   armPivot: {fileID: 184653666743076357}
   firePoint: {fileID: 7105763771840095704}
   owner: {fileID: 5255609981148137612}
+  pistolSound: {fileID: 8300000, guid: be96041463294f140a5dbb3f356d3abd, type: 3}
+  rifleSound: {fileID: 8300000, guid: 8a986599e433c2f4e989ba46f3d1bb44, type: 3}
+  grenadeSound: {fileID: 0}
 --- !u!82 &5673612299309972587
 AudioSource:
   m_ObjectHideFlags: 0

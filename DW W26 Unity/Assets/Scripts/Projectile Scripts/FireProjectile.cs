@@ -4,15 +4,29 @@ using UnityEngine.InputSystem;
  From there just assign prefabs for projectiles and drag the transforms for the player arm pivot and fire point into the appropriate spots*/
 public class FireProjectile : MonoBehaviour
 {
-    [Header("Primary Projectile")]
+    [Header("Pistol")]
     [SerializeField] private GameObject primaryPrefab;
     [SerializeField] private float primarySpeed = 20f;
     [SerializeField] private float primaryFireRate = 5f;
 
-    [Header("Secondary Projectile")]
+    [Header("Rifle")]
     [SerializeField] private GameObject secondaryPrefab;
     [SerializeField] private float secondarySpeed = 15f;
     [SerializeField] private float secondaryFireRate = 3f;
+
+    [Header("Grenade")]
+    [SerializeField] private GameObject tertiaryPrefab;
+    [SerializeField] private float tertiarySpeed = 60f;
+    [SerializeField] private float tertiaryFireRate = 1f;
+
+    [SerializeField] private WeaponData[] weapons;
+
+
+
+
+
+
+
 
     [Header("References")]
     [SerializeField] private Transform armPivot;
@@ -31,18 +45,41 @@ public class FireProjectile : MonoBehaviour
     private bool attackPressed;
     private float nextFireTime;
     private int currentWeaponIndex = 0; //0 = primary, 1 = secondary
+    private int maxWeaponIndex = 0;
+
 
     private Vector2 lookInput;
 
+
+    [Header("Audio")]
+    [SerializeField] AudioClip pistolSound; // <-- drag your sound here in the inspector
+    [SerializeField] AudioClip rifleSound;
+    [SerializeField] AudioClip grenadeSound;
+
     private void Awake()
     {
-        
+
+      
+
+
+
+
+
+
+
+
     }
 
     public void cycleWeapons(InputAction.CallbackContext context)
     {
 
-        SwapWeapon();
+        /*
+        if (context.canceled)
+        {
+            SwapWeapon();
+
+        }
+        */
 
     }
 
@@ -58,7 +95,30 @@ public class FireProjectile : MonoBehaviour
         lookInput=context.ReadValue<Vector2>();
 
     }
-    
+    /*
+    public void cycleLeft(InputAction.CallbackContext context)
+
+
+    {
+         
+        if (currentWeaponIndex == 0) currentWeaponIndex = 2;
+
+        else { currentWeaponIndex--; };
+
+        
+    }
+
+    public void cycleRight(InputAction.CallbackContext context)
+    {
+        if (currentWeaponIndex == 2) currentWeaponIndex = 0;
+
+        else
+        {
+            currentWeaponIndex++;
+        }
+
+    }
+    */
 
 
 
@@ -85,29 +145,67 @@ public class FireProjectile : MonoBehaviour
         }
     }
 
-    private void OnAttack(bool pressed)
-    {
-        attackPressed = pressed;
-    }
+  
 
     private void SwapWeapon()
     {
-        currentWeaponIndex = 1 - currentWeaponIndex;
+
+
+        currentWeaponIndex++;
+
+        if (currentWeaponIndex > 2)
+        {
+            currentWeaponIndex = 0;
+
+        }
+
+        Debug.Log($"Weapon Log {currentWeaponIndex}");
+
     }
 
     private GameObject GetCurrentPrefab()
     {
-        return currentWeaponIndex == 0 ? primaryPrefab : secondaryPrefab;
+        switch (currentWeaponIndex)
+        {
+            case 0:
+                return primaryPrefab;
+            case 1:
+                return secondaryPrefab;
+                case 2:
+                return tertiaryPrefab;
+                default: return null;
+        }
     }
 
     private float GetCurrentSpeed()
     {
-        return currentWeaponIndex == 0 ? primarySpeed : secondarySpeed;
+        switch (currentWeaponIndex)
+        {
+            case 0:
+                return primarySpeed;
+            case 1:
+                return secondarySpeed;
+            case 2:
+                return tertiarySpeed;
+            default: return -1;
+        }
     }
+
+
+
 
     private float GetCurrentFireRate()
     {
-        return currentWeaponIndex == 0 ? primaryFireRate : secondaryFireRate;
+        switch (currentWeaponIndex)
+        {
+            case 0:
+                return primaryFireRate;
+            case 1:
+                return secondaryFireRate;
+            case 2:
+                return tertiaryFireRate;
+            default: return -1;
+        }
     }
 
     private void Shoot()
@@ -123,9 +221,26 @@ public class FireProjectile : MonoBehaviour
 
        ITeamMember teammember = owner.GetComponent<ITeamMember>();
 
+        if (currentWeaponIndex == 0)
+        {
+            SFXManager.instance.playSFX(pistolSound, transform, 1f);
+
+        }
+        else if (currentWeaponIndex == 1)
+        {
+            SFXManager.instance.playSFX(rifleSound, transform, 1f);
+        }
+        else
+        {
+
+         //   SFXManager.instance.playSFX(grenadeSound, transform, 1f);
 
 
-        script.Initialize(owner, teammember.getTeam());
+        }
+
+        
+            script.Initialize(owner, teammember.getTeam(), currentWeaponIndex==3);
+        
 
         Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
         if (rb != null)
