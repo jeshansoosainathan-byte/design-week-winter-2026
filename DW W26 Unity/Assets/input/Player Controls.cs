@@ -199,6 +199,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Respawn"",
+                    ""type"": ""Button"",
+                    ""id"": ""291d3d8d-2a3b-4d83-a9e3-81ffd3ae9bf0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -628,6 +637,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""CycleWeapons"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dcebe6d3-f543-4d6b-bb39-8a076b568816"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Respawn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1227,6 +1247,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_JoinPurgatory = m_Player.FindAction("Join Purgatory", throwIfNotFound: true);
         m_Player_JoinCyberpunk = m_Player.FindAction("Join Cyberpunk", throwIfNotFound: true);
         m_Player_CycleWeapons = m_Player.FindAction("CycleWeapons", throwIfNotFound: true);
+        m_Player_Respawn = m_Player.FindAction("Respawn", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1332,6 +1353,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_JoinPurgatory;
     private readonly InputAction m_Player_JoinCyberpunk;
     private readonly InputAction m_Player_CycleWeapons;
+    private readonly InputAction m_Player_Respawn;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1391,6 +1413,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/CycleWeapons".
         /// </summary>
         public InputAction @CycleWeapons => m_Wrapper.m_Player_CycleWeapons;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Respawn".
+        /// </summary>
+        public InputAction @Respawn => m_Wrapper.m_Player_Respawn;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1453,6 +1479,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @CycleWeapons.started += instance.OnCycleWeapons;
             @CycleWeapons.performed += instance.OnCycleWeapons;
             @CycleWeapons.canceled += instance.OnCycleWeapons;
+            @Respawn.started += instance.OnRespawn;
+            @Respawn.performed += instance.OnRespawn;
+            @Respawn.canceled += instance.OnRespawn;
         }
 
         /// <summary>
@@ -1500,6 +1529,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @CycleWeapons.started -= instance.OnCycleWeapons;
             @CycleWeapons.performed -= instance.OnCycleWeapons;
             @CycleWeapons.canceled -= instance.OnCycleWeapons;
+            @Respawn.started -= instance.OnRespawn;
+            @Respawn.performed -= instance.OnRespawn;
+            @Respawn.canceled -= instance.OnRespawn;
         }
 
         /// <summary>
@@ -1884,6 +1916,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCycleWeapons(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Respawn" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRespawn(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

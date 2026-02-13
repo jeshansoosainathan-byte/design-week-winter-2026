@@ -69,13 +69,11 @@ public class DestroyTerrain : MonoBehaviour
             //Damage Players
             if (hit.CompareTag("Player"))
             {
-               /* DamagePlayer health = hit.GetComponent<DamagePlayer>();
+                PlayerController health = hit.GetComponent<PlayerController>();
                 if (health != null)
                 {
                     health.TakeDamage(playerDamage);
                 }
-
-                */
             }
             //Damage Platforms (stone/glass/explosive)
             else if (hit.CompareTag("Stone") || hit.CompareTag("Glass"))

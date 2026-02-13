@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour, IDamageable
 {
 
@@ -192,15 +193,14 @@ rigidbody2D.linearVelocity = new Vector2(horizontal * speed, rigidbody2D.linearV
     {
 
         //Death sound   
-      
-        Destroy(gameObject);
-
+        SceneManager.LoadScene("Victory");
     }
 
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
         SFXManager.instance.playSFX(hurtSound, transform, 1f);
+        Debug.Log($"Current Health: {currentHealth}");
         if (currentHealth <= 0) {
             currentHealth = 0;
             die();
